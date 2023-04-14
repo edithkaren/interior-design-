@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<title></title>  
+<head> 
+	<link class="link" href=""> 
+</head>
+<style>
+    body{
+	margin:0;
+	color:#6a6f8c;
+	background:url(Background.jpg);
+	font:600 16px/18px 'Open Sans',sans-serif;
+    backface-visibility: visible;
+}
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.forgot-wrap{
+	width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:670px;
+	position:relative;
+	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.forgot-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:rgba(40,57,101,.9);
+}
+.forgot-html .forgot-pass,
+.forgot-form .group .check{
+	display:none;
+}
+.forgot-html .tab,
+.forgot-form .group .label,
+.forgot-form .group .button{
+	text-transform:uppercase;
+}
+.forgot-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.forgot-html .forgot-pass-htm:checked + .tab{
+	color:#fff;
+	border-color:#1161ee;
+}
+.forgot-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.forgot-form .group{
+	margin-bottom:15px;
+}
+.forgot-form .group .label,
+.forgot-form .group .input,
+.forgot-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.forgot-form .group .input,
+.forgot-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+.forgot-form .group input[data-type="password"]{
+	
+	-webkit-text-security:circle;
+}
+.forgot-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.forgot-form .group .button{
+	background:#1161ee;
+}
+.forgot-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.forgot-form .group label .icon:before,
+.forgot-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.forgot-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.forgot-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.forgot-form .group .check:checked + label{
+	color:#fff;
+}
+.forgot-form .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.forgot-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.forgot-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.forgot-html .forgot-pass-htm:checked +  .tab + .forgot-form .forgot-pass-htm{
+	transform:rotate(0);
+}
+.forgot-html .forgot-pass-htm:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+    color: #fff;
+}
+
+
+</style>
+<body>
+	<form action="index.html" method="post">
+		<div class="forgot-wrap">
+			<div class="forgot-html">
+				<a href="login.html"><< Back</a>
+				<input id="tab-1" type="hidden" name="tab" class="forgot-pass-htm" checked><label for="tab-1" class="tab">Forgot Password</label>
+				
+				<div class="forgot-form">
+					<div class="forgot-pass-htm">
+						<div class="group">
+							<label for="user" class="label">Username</label>
+							<input id="user" type="text" class="input" required>
+						</div>
+						<div class="group">
+							<label for="pass" class="label"> Old Password</label>
+							<input id="oldpass" type="password" class="input" data-type="oldpassword" required>
+						</div>
+						<div class="group">
+							<label for="pass2" class="label" > New  password</label>
+							<input id="newpass" type="password" class="input" data-type="newpassword" required>
+						</div>
+						<div class="group">
+							<label for="repass" class="label" >Confirm new password</label>
+							<input id="repass" type="password" class="input" data-type="repassword" required>
+						</div>
+						<div class="group">
+							<input type="submit" class="button" value="Submit" onclick="validation()" required  >
+						</div> 
+						<div class="group">
+							<input type="button" class="button" value="Clear" onclick="clearFunc()" required >
+						</div>
+
+	</form>
+
+	<footer>
+		<span> Made By <a href="#">Rudraksh Paliwal </a> Copyright | &#169; 2023 </span>
+	</footer>
+    </body>
+
+ <script src="forgot.js">
+	function clearFunc()
+	{
+		document.getElementById("user").value="";
+		document.getElementById("oldpass").value="";
+		document.getElementById("newpass").value="";
+		document.getElementById("repass").value="";
+	}
+</script>
+</html>
